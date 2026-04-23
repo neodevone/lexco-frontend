@@ -1,59 +1,62 @@
-# LexcoFrontend
+# Lexco Frontend - Angular 21
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
+SPA desarrollada en Angular 21 con Tailwind CSS.
 
-## Development server
+**Autor:** Cristhian David Roncancio  
+**Fecha:** Abril 2026
 
-To start a local development server, run:
+## Tecnologías
+- Angular 21
+- Tailwind CSS 3.4
+- TypeScript
+- RxJS + Signals
 
+## Instalación
+
+### 1. Clonar repositorio
+```bash
+git clone https://github.com/neodevone/lexco-frontend.git
+cd lexco-frontend
+```
+
+### 2. Instalar dependencias
+```bash
+npm install
+```
+
+### 3. Iniciar aplicación
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abrir `http://localhost:4200`
 
-## Code scaffolding
+## Arquitectura
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+src/app/
+├── core/
+│   ├── guards/        # AuthGuard, RoleGuard, GuestGuard
+│   ├── interceptors/  # Bearer token automático
+│   ├── interfaces/    # User, Product, CartItem
+│   └── services/      # AuthService, UserService, ProductService
+├── modules/
+│   ├── auth/          # Login, Register
+│   ├── admin/         # Dashboard, Users, Products, Profile
+│   └── user/          # Catalog, ProductDetail, Cart
+└── shared/
+└── components/    # WelcomeCard
 
-```bash
-ng generate component component-name
-```
+## Características técnicas
+- Lazy Loading en todos los módulos
+- Signals para estado reactivo del carrito y usuario
+- ChangeDetectionStrategy.OnPush en todos los componentes
+- Lifecycle hooks: ngOnInit, ngOnChanges, ngOnDestroy
+- Formularios reactivos con validación de contraseña segura
+- AuthGuard, RoleGuard y GuestGuard
+- Interceptor HTTP para Bearer token
+- Carrito persistente en localStorage
+- Nueva sintaxis Angular (@if, @for)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Usuarios de prueba
+- Admin: admin@lexco.com / Admin@1234
+- User: user@lexco.com / User@1234
