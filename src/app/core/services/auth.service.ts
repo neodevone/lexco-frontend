@@ -7,7 +7,7 @@ import { User, AuthResponse, LoginPayload, RegisterPayload } from '../interfaces
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private apiUrl = 'http://127.0.0.1:8000/api/auth';
+  private apiUrl = 'http://127.0.0.1:8000/api/auth'; // Url de l'API d'authentification
   
   private _currentUser = signal<User | null>(null);
   
@@ -32,7 +32,7 @@ export class AuthService {
     );
   }
 
-  login(payload: LoginPayload): Observable<AuthResponse> {
+  login(payload: LoginPayload): Observable<AuthResponse> { 
     return this.http.post<AuthResponse>(`${this.apiUrl}/login`, payload).pipe(
       tap(res => this.handleAuthSuccess(res))
     );
