@@ -32,7 +32,7 @@ ng serve
 Abrir `http://localhost:4200`
 
 ## Arquitectura
-
+```
 src/app/
 ├── core/
 │   ├── guards/        # AuthGuard, RoleGuard, GuestGuard
@@ -45,6 +45,7 @@ src/app/
 │   └── user/          # Catalog, ProductDetail, Cart
 └── shared/
 └── components/    # WelcomeCard
+```
 
 ## Características técnicas
 - Lazy Loading en todos los módulos
